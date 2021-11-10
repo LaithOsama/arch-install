@@ -18,6 +18,7 @@ pacman --noconfirm -S grub ntfs-3g os-prober
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
 
 pacman -S --noconfirm xorg-server xorg-xinit xorg-xsetroot \
 xwallpaper sxiv zathura zathura-pdf-mupdf mpd \
@@ -25,7 +26,7 @@ mpv cmus neovim newsboat unrar unzip picom wget \
 zsh wpa_supplicant connman kodi xcompmgr transmission-gtk \
 man-db htop alsa-utils libnotify dunst dash
 
-systemctl enable connmanctl wpa_supplicant
+systemctl enable connman wpa_supplicant
 rm /bin/sh
 ln -s dash /bin/sh
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
