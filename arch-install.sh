@@ -27,8 +27,8 @@ zsh wpa_supplicant connman kodi xcompmgr transmission-gtk \
 man-db htop alsa-utils libnotify dunst dash
 
 systemctl enable connman wpa_supplicant
-rm /bin/sh
-ln -s dash /bin/sh
+
+
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-useradd -m -G wheel -s /bin/zsh laith
+useradd -m -G wheel laith
 passwd laith
