@@ -36,11 +36,11 @@ echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
 echo 'GRUB_CMDLINE_LINUX="root=/dev/sda2 rootfstype=ext4"' >> /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 # Install Packages.
-pacman -Sy --noconfirm xorg-server xorg-xinit xorg-xrandr xorg-xbacklight qutebrowser \
-hsetroot sxiv zathura zathura-pdf-mupdf stow maim redshift slock xdotool libva-intel-driver \
-mpv cmus neovim newsboat unrar unzip wget pcmanfm calcurse xclip xf86-video-intel \
-zsh dhcpcd kodi xcompmgr transmission-gtk unclutter opendoas python-adblock \
-mandoc htop alsa-utils libnotify dunst dash dosfstools zsh-autosuggestions
+pacman -Sy --noconfirm xorg-server xorg-xinit xorg-xrandr xorg-xbacklight qutebrowser xorg-xdpyinfo \
+hsetroot sxiv zathura zathura-pdf-mupdf stow maim redshift slock xdotool libva-intel-driver curl unclutter \
+mpv cmus neovim newsboat unrar unzip wget pcmanfm calcurse xclip xf86-video-intel fzf bc \
+zsh dhcpcd bat xcompmgr transmission-cli unclutter opendoas python-adblock ueberzug \
+mandoc htop alsa-utils xorg-xmodmap xcape xorg-setxkbmap libnotify dunst dash dosfstools zsh-autosuggestions
 pacman -Scc
 # Setting up users, mouse speed, keyboard langs ... etc.
 passwd
@@ -97,6 +97,9 @@ doas make -C ~/.local/src/slstatus install
 doas git clone https://github.com/zdharma-continuum/fast-syntax-highlighting /usr/share/zsh/plugins/fast-syntax-highlighting
 doas wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
 doas chmod a+rx /usr/local/bin/yt-dlp
-mkdir -p ~/.cache/zsh ~/data ~/dl
+git clone https://github.com/pystardust/ytfzf
+cd ytfzf; doas make install doc
+rm -rf ytfzf
+mkdir -p ~/.cache/zsh ~/data ~/dl/git
 touch ~/.cache/zsh/history
 exit
