@@ -39,7 +39,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 pacman -Sy --noconfirm xorg-server xorg-xinit xorg-xrandr xorg-xbacklight qutebrowser xorg-xdpyinfo \
 hsetroot sxiv zathura zathura-pdf-mupdf stow maim redshift slock xdotool libva-intel-driver curl unclutter \
 mpv cmus neovim newsboat unrar unzip wget pcmanfm calcurse xclip xf86-video-intel fzf bc \
-zsh dhcpcd bat xcompmgr transmission-cli unclutter opendoas python-adblock ueberzug \
+zsh dhcpcd bat xcompmgr transmission-cli unclutter opendoas python-adblock ueberzug ffmpeg \
 mandoc htop alsa-utils xorg-xmodmap xcape xorg-setxkbmap libnotify dunst dash dosfstools zsh-autosuggestions
 pacman -Scc
 # Setting up users, mouse speed, keyboard langs ... etc.
