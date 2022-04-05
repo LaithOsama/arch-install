@@ -77,7 +77,7 @@ exit
 printf '\033c'
 cd $HOME
 # The AUR Helper.
-git clone https://github.com/LaithOsama/baph.git
+git clone https://bitbucket.org/natemaia/baph.git
 doas make -C ~/baph install
 rm -rf baph
 # Dotfiles.
@@ -98,7 +98,7 @@ doas git clone https://github.com/zdharma-continuum/fast-syntax-highlighting /us
 doas wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
 doas chmod a+rx /usr/local/bin/yt-dlp
 git clone https://github.com/pystardust/ytfzf
-cd ytfzf; doas make install doc
+doas make -C ~/ytfzf install doc
 rm -rf ytfzf
 mkdir -p ~/.cache/zsh ~/data ~/dl/git
 touch ~/.cache/zsh/history
