@@ -44,6 +44,7 @@ mandoc htop alsa-utils xorg-xmodmap xcape xorg-setxkbmap libnotify dunst dash do
 pacman -Scc
 # Setting up users, mouse speed, keyboard langs ... etc.
 passwd
+systemctl enable dhcpcd
 rm /bin/sh
 ln -s dash /bin/sh
 echo "permit nopass :wheel" >> /etc/doas.conf
